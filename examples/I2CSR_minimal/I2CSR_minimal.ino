@@ -27,16 +27,18 @@ void setup()
 
   //  Arduino UNO as example.
   //  function call
-  I2CSoftReset(A5, A4);  //  SCL, SDA
-  //  class call
-  I2CBUS.reset();
-  //  class call to get last reset moment
-  Serial.println(I2CBUS.lastReset());
+  I2CSoftReset(A5, A4);  //  SCL, SDA, adjust pins to match the board used.
+
+
 }
 
 
 void loop()
 {
+  I2CBUS.reset();
+  Serial.println(I2CBUS.lastReset());
+
+  delay(1234);  //  just random time.
 }
 
 
